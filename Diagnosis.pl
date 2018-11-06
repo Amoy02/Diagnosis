@@ -10,3 +10,19 @@
 %           Ackeem Smith  - 6200....
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Create Database of illnesses and medications
+symptom(flu,headach).
+symptom(flu,sore_throat).
+symptom(flu,fever).
+
+medication(panadol, flu).
+medication(cetamol_cold_and_flu, cold).
+
+
+cures(Illness,Medication) :- 
+    medication(Medication,Illness).
+
+diagnose(Symptom,Illness):-
+    symptom(Illness,Symptom).
