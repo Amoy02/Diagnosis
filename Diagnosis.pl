@@ -14,16 +14,7 @@
 
 % Create Database of illnesses, symptoms and medications
 
-
-% Introduction
-
-intro:-
-    write('Welcome'),nl,
-    write('This is a simple expert system for diagnosing common diseases'),nl,
-    write('To diagnose an illness, simply answer the system's prompts),nl,
-    nl.
-
-% Illnesses and their symptoms
+% Illnesses and their symptoms %
 
 % Influenza
 
@@ -36,6 +27,7 @@ symptom(influenza, sore_throat).
 
 
 % Cold
+
 symptom(cold, cough).
 symptom(cold, runny_nose).
 symptom(cold, nasal_congestion).
@@ -91,14 +83,6 @@ symptom(ebola, vomiting).
 symptom(ebola, abdominal_pain).
 symptom(ebola, unexplained_bleeding).
 
-% Middle East Respiratory Syndrome (MERS)
-
-symptom(mers, fever).
-symptom(mers, cough).
-symptom(mers, shortness_of_breath).
-symptom(mers, )diarrhea.
-symptom(mers, vomiting).
-
 % Migraine
 
 symptom(migraine, nausea).
@@ -118,10 +102,53 @@ symptom(arthritis, muscle_wasting).
 
 
 
-
-
+% Medication %
 medication(panadol, influenza).
+medication(advil, cold).
+medication(ethambutol, tuberculosis).
+medication(levofloxacin, pneumonia).
+medication(albuterol, asthma).
+medication(tylenol, zika).
+medication(favipiravir , ebola).
+medication(excedrin, migraine).
+medication(tylenol, arthritis).
 
+
+% Patient Info
+
+
+% Medicine Dosage
+
+
+% Introduction
+
+intro:-
+    write('Welcome'),nl,
+    write('This is a simple expert system for diagnosing common diseases'),nl,
+    write('To diagnose an illness, simply follow the system\'s instructions'),nl,
+    write('Choose from the following to continue:'),nl,
+    nl,nl,nl,
+    write('1. Diagnose Illness'),nl,
+    write('2. Prevention Tips'),nl,
+    write('4. Quit'),nl,
+    read(Op),(Op  Patient History'),nl,
+    write('3.is 1-> diagnose;
+    Op is 2 -> patient_history;
+    Op is 3 -> prevention_tips;
+    Op is 4 -> quit;
+    nl, write('Bye')).
+
+diagnose:-
+    write('TODO: Gonna add that in a bit').
+
+patient_history:-
+    write('TODO: Gonna add that in a bit').
+
+prevention_tips:-
+    write('TODO: Gonna add that in a bit').
+
+quit:-
+    write('TODO: Gonna add that in a bit').
 
 cures(Illness,Medication) :- 
     medication(Medication,Illness).
